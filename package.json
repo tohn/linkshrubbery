@@ -1,7 +1,7 @@
 {
-  "name": "devise",
+  "name": "linkshrubbery",
   "version": "1.0.0",
-  "description": "devise hugo theme",
+  "description": "linkshrubbery hugo theme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     "hugo",
     "theme"
   ],
-  "author": "Austin Gebauer",
+  "author": "Yannic Haupenthal",
   "license": "MIT",
   "devDependencies": {}
 }
