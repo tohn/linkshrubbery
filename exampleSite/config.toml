@@ -1,12 +1,13 @@
 baseURL = "https://example.com"
 title = "Your Website Title"
 languageCode = "en-us"
-theme = "devise"
+theme = "linkshrubbery"
 relativeURLs = true
 enableEmoji = true
 googleAnalytics = ""
 enableRobotsTXT = true
 copyright = "&copy; Copyright Year, Your Name"
+ignoreErrors = ["error-missing-instagram-accesstoken"]
 
 # Main menu items
 [menu]
