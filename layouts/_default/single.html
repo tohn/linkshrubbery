@@ -1,5 +1,63 @@
 {{ define "main" }}
-    <div class="pl-sm-4 ml-sm-5">
-        {{ .Content }}
+  {{ $content := .Content }}
+  {{ $tmp := lower .Title }}
+  {{ $title := .Params.shrubbery | default $tmp }}
+  {{ if isset .Site.Data "shrubberies" }}
+  {{ $a := index .Site.Data.shrubberies $title }}
+  {{ with $a }}
+<header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+                <img id="avatar" class="rounded-circle"
+                    {{ if (and (isset . "avatar") (fileExists (printf "static/%s" (strings.TrimPrefix "/" .avatar)))) }}
+                        {{ if hasPrefix .avatar "/" }}
+                            src="{{ .avatar }}"
+                        {{ else }}
+                            src="{{ printf "/%s" .avatar }}"
+                        {{ end }}
+                    {{ else }}
+                        src="/images/avatar.png"
+                    {{ end }}
+                />
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+            <h2 class="m-0 mb-2 mt-4 mt-sm-5">
+                    {{ if isset . "name" }}{{ .name }}{{ else }}{{ .Site.Title }}{{ end }}
+            </h2>
+            <p class="text-muted mb-1">
+                {{ if isset . "description" }}{{ .description }}{{ else }}{{ .Site.Params.description }}{{ end }}
+            </p>
+            <ul id="nav-social" class="list-inline">
+    {{ range sort .social "name" }}
+                    <li class="list-inline-item mr-3">
+        {{ if isset . "icon" }}
+        {{ if isset . "link" }}
+        <a target="_blank" href="{{ .link }}">
+        <i class='{{ if isset . "icon_set" }}{{ .icon_set }}{{ else }}fab{{ end }} fa-{{ .icon }}'></i>{{ end }}
+                        </a>
+                    </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </div>
     </div>
+    <hr />
+</header>
+<div class="container">
+  <div class="p-sm-3 m-sm-3">
+    <!--{{ $content }}-->
+    <ul id="shrubberies" class="list-group">
+    {{ range .shrubberies }}
+      {{ $hash := substr ( md5 .link ) 0 6 }}
+      <div class="shrubbery">
+        <li class="list-group-item list-group-item-action }}">
+          {{ if isset . "icon" }}<i class='{{ if isset . "icon_set" }}{{ .icon_set }}{{ else }}fas{{ end }} fa-{{ .icon }}'></i>{{ end }} <a style="color:#{{ $hash }};" href="{{ .link }}">{{ .name }}</a>
+        </li>
+      </div>
+    {{ end }}
+    </ul>
+  {{ end }}
+  </div>
+</div>
+{{ end }}
 {{ end }}

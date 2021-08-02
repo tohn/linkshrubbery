@@ -1,16 +1,34 @@
 {{ define "main" }}
-    <div class="pl-sm-4 ml-sm-5">
-        <ul class="list-unstyled">
-        {{ range .Pages }}
-            <li>
-                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-                    {{ .Date.Format "Jan 2 2006" }}
-                </time>
-                <a href="{{ .RelPermalink }}">
-                    {{ if .Draft }}DRAFT: {{end}}{{ .Title }}
-                </a>
-            </li>
-        {{ end }}
-        </ul>
+<header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row justify-content-center">
+        <div class="col-3 align-self-center">
+                <img id="logo" class="rounded-circle"
+                    {{ if (and (isset .Site.Params "logo") (fileExists (printf "static/%s" (strings.TrimPrefix "/" .Site.Params.logo)))) }}
+                        {{ if hasPrefix .Site.Params.logo "/" }}
+                            src="{{ .Site.Params.logo }}"
+                        {{ else }}
+                            src="{{ printf "/%s" .Site.Params.logo }}"
+                        {{ end }}
+                    {{ else }}
+                        src="/images/avatar.png"
+                    {{ end }}
+                />
+        </div>
     </div>
+    <hr />
+</header>
+<div class="container">
+  <div class="p-sm-3 m-sm-3">
+    <ul class="list-group">
+    {{ if isset .Site.Data "shrubberies" }}
+    {{ range $i, $e := .Site.Data.shrubberies }}
+      <li class="list-group-item list-group-item-action">
+        <a href="{{ $i }}">{{ .name }}</a>
+      </li>
+    {{ end }}
+    {{ end }}
+    </ul>
+  </div>
+</div>
+<!--  <div class="pl-sm-4 ml-sm-5">-->
 {{ end }}
