@@ -1,0 +1,20 @@
+---
+name: "Test"
+description: "Test."
+avatar: "/images/avatar.png"
+social:
+  - name: "GitHub"
+    link: "https://github.com/test"
+    icon: "github"
+  - name: "Website"
+    link: "https://example.org"
+    icon: "link"
+    icon_set: "fas"
+  - name: "Instagram"
+    link: "https://www.instagram.com/test/"
+    icon: "instagram"
+shrubberies:
+  - name: "Ni!"
+    link: "https://www.youtube.com/watch?v=2UbtcmjfKa8"
+    icon: "youtube"
+    icon_set: "fab"
