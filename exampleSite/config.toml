@@ -1,55 +1,19 @@
-baseURL = "https://example.com"
-title = "Your Website Title"
+baseURL = "https://example.org"
+title = "LinkShrubbery"
 languageCode = "en-us"
 theme = "linkshrubbery"
 relativeURLs = true
 enableEmoji = true
-googleAnalytics = ""
 enableRobotsTXT = true
-copyright = "&copy; Copyright Year, Your Name"
-ignoreErrors = ["error-missing-instagram-accesstoken"]
-
-# Main menu items
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    title = "About"
-    url = "/about/"
-    weight = -110
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    title = "Posts"
-    url = "/post/"
-    weight = -100
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    title = "Categories"
-    url = "/categories/"
-    weight = -90
+copyright = "&copy; Year, Your Name"
+disableKinds = ["taxonomy", "term"]
 
 # Configuration Features
 [params]
   description = "Your meta description"      # Your meta description of the site
-  header_title = "Your Name"                 # Your header title
-  header_subtitle = "Your Creative Subtitle" # Your header subtitle
-  home_image = "/images/avatar.png"          # Path to header image starting from the static directory
-  recent_posts = 5                           # Max amount of recent posts to show
-  mainSections = ["posts", "post", "blog"]   # Main sections to include in recent posts
+  subtitle = "Your Creative Subtitle"        # Your header subtitle
+  avatar = "/images/avatar.png"          # Path to header image starting from the static directory
+  logo = "/images/logo.png"
   [params.style]                             # CSS style overrides
     backgroundColor = "#f8f9fa"
     fontColor = "#212529"
-  [[params.social]]
-    fa_icon = "fab fa-github fa-1x"          # Font Awesome icon class
-    href = "http://github.com/youruser"      # Link to associate with icon (http://, https://, mailto:)
-  [[params.social]]
-    fa_icon = "fab fa-linkedin-in fa-1x"
-    href = ""
-  [[params.social]]
-    fa_icon = "fab fa-twitter fa-1x"
-    href = ""
-  [[params.social]]
-    fa_icon = "fas fa-at fa-1x"
-    href = ""
