@@ -1,5 +1,12 @@
 <head>
-    <title>{{ .Site.Title }}</title>
+  {{- $tmp := lower .Title -}}
+  {{- $title := .Params.shrubbery | default $tmp -}}
+  {{- if isset .Site.Data "shrubberies" -}}
+  {{- $a := index .Site.Data.shrubberies $title | default "" -}}
+  <title>{{ if isset $a "name" }}{{ $a.name }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{end}}</title>
+  {{- else -}}
+  <title>{{ .Site.Title }}</title>
+  {{- end -}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
