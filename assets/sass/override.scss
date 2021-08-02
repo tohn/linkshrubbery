@@ -21,7 +21,7 @@ $fa-font-path: "../webfonts";
   min-height: calc(100vh - 105px);
 }
 
-#home-image {
+#avatar {
   width: 120px;
   height: 120px;
   border: solid 5px white;
@@ -30,14 +30,18 @@ $fa-font-path: "../webfonts";
   padding: 0px;
 }
 
-#nav-links {
-  position: relative;
-  left: -5px;
+#logo {
+  width: 120px;
+  height: 120px;
+  border: solid 5px white;
+  box-shadow: 0px 10px 7px -10px rgba(0,0,0,0.6);
+  border-radius: 0.20rem;
+  padding: 0px;
 }
 
-#nav-social {
-  position: relative;
-  left: 1px;
+#logo-small {
+  width: 25px;
+  height: 25px;
 }
 
 .category {
@@ -116,6 +120,13 @@ blockquote:before {
 
 blockquote p {
   display: inline;
+}
+
+footer {
+  a,a:hover,a:active,a:visited {
+    color: $black;
+    text-decoration: none;
+  }
 }
 
 // === Media breakpoints ===
