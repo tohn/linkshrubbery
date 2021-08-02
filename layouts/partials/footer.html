@@ -1,12 +1,16 @@
-<footer class="text-center pb-1">
-    <small class="text-muted">
-        {{ if .Site.Copyright }}
-            {{ .Site.Copyright | safeHTML }}
-        {{ else }}
-            {{ "&copy; Copyright Year, Your Name" | safeHTML }}
-        {{ end }}
-        <br>
-        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
-        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
-    </small>
+<footer class="text-center pb-3 pt-3">
+  <a href="/">
+  <img id="logo-small" class="rounded-circle"
+                    {{ if (and (isset .Site.Params "logo") (fileExists (printf "static/%s" (strings.TrimPrefix "/" .Site.Params.logo)))) }}
+                        {{ if hasPrefix .Site.Params.logo "/" }}
+                            src="{{ .Site.Params.logo }}"
+                        {{ else }}
+                            src="{{ printf "/%s" .Site.Params.logo }}"
+                        {{ end }}
+                    {{ else }}
+                        src="/images/logo.png"
+                    {{ end }}
+                />
+  LinkShrubbery
+  </a>
 </footer>
