@@ -129,7 +129,6 @@ hugo server --themesDir ../.. --watch --verbose --cleanDestinationDir --disableF
 
 For a live demo of the theme, see at:
 
-- [themes.gohugo.io/linkshrubbery](https://themes.gohugo.io/linkshrubbery)
 - [ls.uxg.ch](https://ls.uxg.ch)
 
 ## Contributing
