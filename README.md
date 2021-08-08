@@ -1,4 +1,4 @@
-# LinkShrubbery
+# Linkshrubbery
 
 A fast, minimal, responsive [Hugo](https://gohugo.io/) theme similar to
 [Linktree](https://linktr.ee).
@@ -28,7 +28,7 @@ A fast, minimal, responsive [Hugo](https://gohugo.io/) theme similar to
 ## Usage
 
 This following guides installation, configuration, and updating of the
-LinkShrubbery Hugo theme.
+Linkshrubbery Hugo theme.
 
 ### Installation
 
@@ -57,7 +57,7 @@ Example `config.toml` file with all configuration features filled out:
 
 ```toml
 baseURL = "https://example.org"
-title = "LinkShrubbery"
+title = "Linkshrubbery"
 languageCode = "en-us"
 theme = "linkshrubbery"
 relativeURLs = true

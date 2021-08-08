@@ -1,5 +1,5 @@
 baseURL = "https://example.org"
-title = "LinkShrubbery"
+title = "Linkshrubbery"
 languageCode = "en-us"
 theme = "linkshrubbery"
 relativeURLs = true
