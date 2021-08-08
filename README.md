@@ -18,12 +18,12 @@ A fast, minimal, responsive [Hugo](https://gohugo.io/) theme similar to
 - Ability to customize the theme styles via [Sass](https://sass-lang.com/)
 - Ability to customize the following items via Hugo
   [configuration](https://gohugo.io/getting-started/configuration/) file
-      - Meta description
-      - Subtitle
-      - Avatar
-      - Logo
-      - Background color
-      - Font color
+  - Meta description
+  - Subtitle
+  - Avatar
+  - Logo
+  - Background color
+  - Font color
 
 ## Usage
 
@@ -68,13 +68,55 @@ disableKinds = ["taxonomy", "term"]
 
 # Configuration Features
 [params]
-  description = "Your meta description"      # Your meta description of the site
-  subtitle = "Your Creative Subtitle"        # Your header subtitle
-  avatar = "/images/avatar.png"          # Path to header image starting from the static directory
-  logo = "/images/logo.png"
-  [params.style]                             # CSS style overrides
+  description = "Your meta description"  # Your meta description of the site
+  avatar = "/images/avatar.png"          # Path to avatar image starting from the static directory
+  logo = "/images/logo.png"              # Path to logo image starting from the static directory
+  [params.style]                         # CSS style overrides
     backgroundColor = "#f8f9fa"
     fontColor = "#212529"
+```
+
+### Adding content
+
+This theme uses [Data
+Templates](https://gohugo.io/templates/data-templates/) for content. If
+you want to add a "page", create two files:
+
+- `data/shrubberies/new_page.yaml`
+- `content/new_page.md`
+
+The file `new_page.yaml` could contain the following content:
+
+```yaml
+---
+name: "Test"
+description: "Test."
+avatar: "/images/avatar.png"
+social:
+  - name: "GitHub"
+    link: "https://github.com/test"
+    icon: "github"
+  - name: "Website"
+    link: "https://example.org"
+    icon: "link"
+    icon_set: "fas" # if it's not a brand, you have to provide the icon_set
+  - name: "Instagram"
+    link: "https://www.instagram.com/test/"
+    icon: "instagram"
+shrubberies:
+  - name: "Ni!"
+    link: "https://www.youtube.com/watch?v=2UbtcmjfKa8"
+    icon: "youtube"
+    icon_set: "fab" # here it's the other way around: if it's not a brand, you have to provide the icon_set
+```
+
+The file `content/new_page.md` could contain the following content:
+
+```md
+---
+title: "Test"
+---
+Test.
 ```
 
 ### Updating
@@ -146,3 +188,9 @@ to let me know.
 Thanks a lot! :blush:
 
 [Credits](CREDITS.md)
+
+## TODO
+
+- use next-gen formats for images, like webp
+- fix `isset`
+- provide automatic width and height for images
