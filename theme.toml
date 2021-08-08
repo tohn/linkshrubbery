@@ -2,10 +2,13 @@ name = "linkshrubbery"
 license = "MIT"
 licenselink = "https://github.com/tohn/linkshrubbery/blob/main/LICENSE"
 description = "A fast, minimal, responsive Hugo theme similar to Linktree."
+
 homepage = "https://github.com/tohn/linkshrubbery"
+
+demosite = "https://ls.uxg.ch"
+
 tags = ["linktree", "minimal", "personal", "simple", "clean"]
-features = ["responsive"]
-min_version = "0.86.0"
+features = ["responsive", "data"]
 
 [author]
   name = "Yannic Haupenthal"
