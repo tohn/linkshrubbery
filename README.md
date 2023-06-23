@@ -166,7 +166,7 @@ To run a live demo of the theme on your laptop, run the following from
 the `exampleSite` directory of the linkshrubbery theme:
 
 ```bash
-hugo server --themesDir ../.. --watch --verbose --cleanDestinationDir --disableFastRender
+hugo server --themesDir ../.. --watch --logLevel info --cleanDestinationDir --disableFastRender
 ```
 
 For a live demo of the theme, see at:
@@ -192,5 +192,4 @@ Thanks a lot! :blush:
 ## TODO
 
 - use next-gen formats for images, like webp
-- fix `isset`
 - provide automatic width and height for images

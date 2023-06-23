@@ -2,10 +2,12 @@
   {{- $tmp := lower .Title -}}
   {{- $title := .Params.shrubbery | default $tmp -}}
   {{- if isset .Site.Data "shrubberies" -}}
-  {{- $a := index .Site.Data.shrubberies $title | default "" -}}
-  <title>{{ if isset $a "name" }}{{ $a.name }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{end}}</title>
+    {{- $a := index .Site.Data.shrubberies $title | default "" -}}
+    {{- with $a -}}
+      <title>{{ if isset . "name" }}{{ .name }} | {{ $.Site.Title }}{{ else }}{{ $.Site.Title }}{{end}}</title>
+    {{- end -}}
   {{- else -}}
-  <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title }}</title>
   {{- end -}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
