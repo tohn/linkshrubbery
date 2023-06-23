@@ -1,1 +1,4 @@
 exampleSite/Makefile
+node_modules
+resources
+.hugo_build.lock
