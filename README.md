@@ -42,7 +42,6 @@ Hugo site:
 
 ```bash
 git submodule add https://github.com/tohn/linkshrubbery.git themes/linkshrubbery
-npm i
 ```
 
 ### Configuration
